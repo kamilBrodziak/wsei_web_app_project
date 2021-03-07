@@ -2,7 +2,11 @@
   "name": "web_app_wsei_project",
   "version": "0.0.1",
   "description": "",
-  "keywords": ["web", "app", "wsei"],
+  "keywords": [
+    "web",
+    "app",
+    "wsei"
+  ],
   "license": "",
   "author": "",
   "scripts": {
@@ -12,5 +16,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "parcel-bundler": "^1.12.4"
   }
 }
