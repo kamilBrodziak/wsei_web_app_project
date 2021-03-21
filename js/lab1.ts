@@ -1,23 +1,35 @@
 
 class NumInput {
-  domEl : HTMLInputElement;
-  isValid() : boolean { return /^\d+$/.test(this.domEl.value) };
-  getValue() : string { return this.domEl.value };
+  container : HTMLDivElement;
+  numInput : HTMLInputElement;
+  checkInput: HTMLInputElement;
+  isValid() : boolean { return /^\d+$/.test(this.numInput.value) };
+  getValue() : string { return this.numInput.value };
+  isChecked() : boolean { return  this.checkInput.checked };
   approveInput() : void {
     if(this.isValid()) {
-      this.domEl.style.border = "2px solid green";
+      this.numInput.style.border = "2px solid green";
     } else {
-      this.domEl.style.border = "3px solid red";
+      this.numInput.style.border = "3px solid red";
     }
+  }
+  remove() : void {
+    this.container.remove();
   }
 
   constructor(eventHandler : () => void) {
     const _this = this;
-    this.domEl = document.createElement("input");
-    this.domEl.addEventListener('keyup', (e : KeyboardEvent) => {
+    this.container = document.createElement("div");
+    this.numInput = document.createElement("input");
+    this.numInput.type = "number";
+    this.checkInput = document.createElement("input");
+    this.checkInput.type = "checkbox";
+    this.numInput.addEventListener('keyup', (e : KeyboardEvent) => {
       _this.approveInput();
       eventHandler();
     })
+    this.container.appendChild(this.numInput);
+    this.container.appendChild(this.checkInput);
   }
 }
 
@@ -27,11 +39,13 @@ class Calculator {
   constructor(inputCount: number) {
     this.loadInputs(inputCount);
     this.loadResultInputs();
-    let domInputs : HTMLInputElement[] = [];
+    let domInputs : HTMLDivElement[] = [];
     this.inputs.forEach((el : NumInput) => {
-      domInputs.push(el.domEl);
+      domInputs.push(el.container);
     })
-    this.printInputs(domInputs, document.querySelector("#inputs"));
+    const inputContainer : HTMLDivElement = document.querySelector("#inputs");
+    this.printInputs(domInputs, inputContainer);
+    this.printRemoveButton(inputContainer);
     this.printInputs(this.resultInputs, document.querySelector("#result_inputs"));
   }
 
@@ -51,7 +65,24 @@ class Calculator {
     }
   }
 
-  private printInputs(inputs : HTMLInputElement[], container : HTMLDivElement) : void {
+  private printRemoveButton(container : HTMLDivElement) : void {
+    const removeButton = document.createElement("button");
+    removeButton.innerText = "Remove";
+    const _this = this;
+    removeButton.addEventListener("click", () => {
+      for(let i = _this.inputs.length - 1; i >=0; --i) {
+        const el = _this.inputs[i];
+        if(el.isChecked()) {
+          el.remove();
+          _this.inputs.splice(i, 1);
+          _this.calculateResult();
+        }
+      }
+    });
+    container.appendChild(removeButton);
+  }
+
+  private printInputs(inputs : HTMLElement[], container : HTMLDivElement) : void {
     inputs.forEach((el : HTMLInputElement) => {
       container.appendChild(el);
     })
@@ -76,5 +107,19 @@ class Calculator {
     }
   }
 }
+const container : HTMLDivElement = document.createElement("div");
+const countInput : HTMLInputElement = document.createElement("input");
+countInput.type = "number";
+countInput.min = "1";
+countInput.max = "10";
+countInput.value = "5";
+const button = document.createElement("button");
+button.innerText = "Create"
+container.appendChild(countInput);
+container.appendChild(button);
+button.addEventListener("click", () => {
+  new Calculator(+countInput.value);
+  container.remove();
+});
+document.querySelector("#root").appendChild(container)
 
-new Calculator(5);
