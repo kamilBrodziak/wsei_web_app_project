@@ -1,0 +1,39 @@
+.inputContainer {
+    margin: 10px;
+    display: flex;
+    input {
+        width: 80px;
+        height: 40px;
+        margin: 0 10px 0 0;
+        padding: 0 0 0 10px;
+        border: 4px groove silver;
+    }
+
+    button {
+        width: 40px;
+        height: 40px;
+        border: 0;
+        background: none;
+        padding: 0;
+        position: relative;
+        &::before, &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            height: 100%;
+            border-radius: 10px;
+            border: groove silver;
+            border-width: 0 4px;
+            
+        }
+
+        &::before {
+            transform: translateX(-50%) rotate(45deg) ;
+        }
+
+        &::after {
+            transform: translateX(-50%) rotate(-45deg);
+        }
+    }
+}

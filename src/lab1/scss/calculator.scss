@@ -1,0 +1,12 @@
+@import './calculator/input.scss';
+@import './calculator/addButton.scss';
+@import './calculator/results.scss';
+
+#calculator {
+    padding: 20px;
+    flex-direction: column;
+    * {
+        box-sizing: border-box;
+    }
+}
+
