@@ -1,0 +1,53 @@
+#soundApp {
+    padding: 60px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 50px;
+    * {
+        box-sizing: border-box;
+    }
+}
+
+#audios {
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 1350px;
+    gap: 40px;
+    justify-content: center;
+}
+
+.key {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(45deg, rgb(111, 111, 255), rgb(134, 134, 255), rgb(111, 111, 255));
+    border: 10px groove blue;
+    border-radius: 20px;
+    color: rgb(255, 219, 129);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.soundAppButton {
+    outline: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 20px;
+    background: linear-gradient(to bottom, rgb(255, 219, 129), rgb(255, 243, 212), rgb(255, 219, 129));
+    box-shadow: 2px 2px 5px 1px goldenrod;
+    border: 0;
+    &:hover {
+        animation: hover 0.5s forwards;
+    }
+}
+
+
+@keyframes hover {
+    from {
+        filter: sepia(0);
+    }
+
+    to {
+        filter: sepia(0.5);
+    }
+}

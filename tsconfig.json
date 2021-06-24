@@ -12,7 +12,8 @@
         "moduleResolution": "node",
         "types": [
             "node",
-            "webpack-env"
+            "webpack-env",
+            "dom-mediacapture-record"
         ]
     },
     "exclude": [

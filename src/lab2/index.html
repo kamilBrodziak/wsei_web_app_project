@@ -1,16 +1,60 @@
 <!doctype html>
 <html class="no-js" lang="">
+
 <head>
-  <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
-  <div id="root">
-    <audio src="sounds/clap.wav" class='piano_audio' data-sound="clap" data-key="q"></audio>
-    <audio src="sounds/boom.wav" class='piano_audio' data-sound="boom" data-key="w"></audio>
-    <button id="playChannel1">Play channel 1</button>
-  </div>
+    <div id="root">
+        <div id="soundApp">
+            <div id="audios">
+                <div class="key flexCenter">
+                    Q
+                    <audio src="assets/sounds/clap.wav" class='piano_audio' data-sound="clap" data-key="q"></audio>
+                </div>
+                <div class="key flexCenter">
+                    W
+                    <audio src="assets/sounds/boom.wav" class='piano_audio' data-sound="boom" data-key="w"></audio>
+                </div>
+                <div class="key flexCenter">
+                    E
+                    <audio src="assets/sounds/hihat.wav" class='piano_audio' data-sound="hihat" data-key="e"></audio>
+                </div>
+                <div class="key flexCenter">
+                    A
+                    <audio src="assets/sounds/kick.wav" class='piano_audio' data-sound="kick" data-key="a"></audio>
+                </div>
+                <div class="key flexCenter">
+                    S
+                    <audio src="assets/sounds/openhat.wav" class='piano_audio' data-sound="openhat" data-key="s"></audio>
+                </div>
+                <div class="key flexCenter">
+                    D
+                    <audio src="assets/sounds/ride.wav" class='piano_audio' data-sound="ride" data-key="d"></audio>
+                </div>
+                <div class="key flexCenter">
+                    Z
+                    <audio src="assets/sounds/snare.wav" class='piano_audio' data-sound="snare" data-key="z"></audio>
+                </div>
+                <div class="key flexCenter">
+                    X
+                    <audio src="assets/sounds/tink.wav" class='piano_audio' data-sound="tink" data-key="x"></audio>
+                </div>
+                <div class="key flexCenter">
+                    C
+                    <audio src="assets/sounds/tom.wav" class='piano_audio' data-sound="tom" data-key="c"></audio>
+                </div>
+            </div>
+            <div id='recordings' class="flexCenter">
+    
+            </div>
+            <button id="createRecordingButton" class="soundAppButton">Create recording</button>
+        </div>
+    </div>
 </body>
+
 </html>

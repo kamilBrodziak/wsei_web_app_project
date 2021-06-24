@@ -22,7 +22,10 @@ class ElementBuilder<T extends Elements> {
         return this;
     }
 
-
+    addId(id:string) {
+        this.element.id = id;
+        return this;
+    }
 
     addClass(className:string){
         this.element.className = className;

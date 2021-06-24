@@ -1,0 +1,60 @@
+#recordings {
+    flex-direction: column;
+    gap: 20px;
+}
+
+#recording {
+    display: flex;
+    gap: 10px;
+    text-align: center;
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+
+        &::after {
+            content: '';
+            display: none;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        &.active::after {
+            display: inline;
+            animation: loading 4s infinite;
+        }
+    }
+    * {
+        outline: none;
+    }
+
+    audio {
+        &::-webkit-media-controls-panel {
+            background: linear-gradient(to bottom, rgb(255, 219, 129), rgb(255, 243, 212), rgb(255, 219, 129));
+            box-shadow: 2px 2px 5px 1px goldenrod;
+        }
+    }
+
+    button {
+        width: 100px;
+    }
+}
+
+@keyframes loading {
+    0% {
+        content: ''  
+    }
+
+    25% {
+        content: '.'
+    }
+
+    50% {
+        content: '..';
+    }
+
+    75% {
+        content: '...';
+    }
+}
