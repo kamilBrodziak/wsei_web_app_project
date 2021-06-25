@@ -3,7 +3,8 @@ module.exports =  {
         main: "./src/index.ts",
         lab1: './src/lab1/index.ts',
         lab2: './src/lab2/index.ts',
-        lab3: './src/lab3/index.ts'
+        lab3: './src/lab3/index.ts',
+        lab4: './src/lab4/index.ts'
     },
     output: {
         publicPath: '/'

@@ -6,13 +6,15 @@ export enum TagName {
     LI = 'li',
     SPAN = 'span',
     IMG = 'img',
+    TEXTAREA = "textarea"
 }
 
 export enum EventType {
     ONCLICK = "click",
     KEYUP = "keyup",
     ONCHANGE = 'change',
-    INPUT = 'input'
+    INPUT = 'input',
+    ONFOCUSOUT = "focusout"
 }
 
 type Elements = HTMLElement | HTMLDivElement;

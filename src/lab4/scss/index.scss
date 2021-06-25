@@ -1,0 +1,31 @@
+@import '../../scss/common.scss';
+@import './partials/floatingButtons.scss';
+@import './partials/note.scss';
+header {
+    background: rgb(169, 255, 169);
+    text-align: center;
+    font-size: 25px;
+    padding: 20px;
+    color: rgb(1, 85, 1);
+}
+
+#noteApp {
+    background: linear-gradient(45deg, rgb(194, 252, 194), rgb(225, 252, 225), rgb(194, 252, 194));
+    min-height: 100vh;
+    h2 {
+        text-align: center;
+        color: rgb(1, 85, 1);
+
+    }
+}
+
+#notesContainer {
+    padding: 10px;
+    
+    & > div {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+    }
+}
+

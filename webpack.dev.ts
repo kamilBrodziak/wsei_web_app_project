@@ -51,6 +51,11 @@ module.exports =  merge(common, {
             template: "./src/lab3/index.html",
             filename: "lab3/index.html",
             chunks: ['lab3'],
+        }),
+        new HtmlWebpackPlugin({
+            template: "./src/lab4/index.html",
+            filename: "lab4/index.html",
+            chunks: ['lab4'],
         })
     ],
     devtool: "source-map",

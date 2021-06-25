@@ -1,0 +1,91 @@
+.note {
+    display: grid;
+    width: 100%;
+    max-width: 1000px;
+    padding: 5px;
+    box-sizing: border-box;
+    min-width: 360px;
+    grid-template-columns: 1fr 40px 40px 40px 40px;
+    grid-template-rows: auto auto auto;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 0 10px 1px green;
+    grid-template-areas: "title title pin expand remove" "body body body body body" "date date date date date";
+    &.active {
+        grid-template-areas: "title color pin expand remove" "body body body body body";
+    }
+    background: green;
+    
+    button {
+        font-size: 25px;
+        border: 0;
+        outline: 0;
+        padding: 0;
+        height: 40px;
+    }
+    * {
+        background: 0;
+    }
+}
+
+.noteTitle, .noteBody {
+    border: 0;
+    outline: 0;
+    padding: 5px;
+    border-bottom: 1px solid silver;
+}
+
+.noteTitle {
+    font-size: 25px;
+    grid-area: title;
+}
+
+.noteExpandButton {
+    grid-area: expand;
+}
+
+.noteColorButton {
+    grid-area: color;
+    height: 30px;
+    width: 30px;
+    margin: 5px;
+    padding: 5px;
+    border:0;
+    overflow: hidden;
+    box-shadow: 0 0 5px 1px black;
+    padding: 0;
+    outline: 0;
+    &::-webkit-color-swatch-wrapper {
+        padding: 0;
+    }
+    &::-webkit-color-swatch {
+        border: 0;
+        cursor: pointer;
+    }
+    &:disabled {
+        display: none;
+    }
+}
+
+.notePinButton {
+    grid-area: pin;
+}
+
+.noteRemoveButton {
+    font-size: 25px;
+    grid-area: remove;
+}
+
+.noteBody {
+    grid-area: body;
+    min-height: 200px;
+    font-size: 20px;
+    resize: vertical;
+    &:disabled {
+        min-height: 2.5em;
+        resize: none;
+        height: 2.5em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
