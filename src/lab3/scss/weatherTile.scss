@@ -1,0 +1,51 @@
+.weather {
+    display: grid;
+    grid-template-columns: 70px 70px;
+    gap: 10px;
+    outline: none;
+    border: 0;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: "icon icon" "title title" "temp press" "temp humid";
+    background: linear-gradient(-45deg, rgb(163, 163, 255), rgb(206, 206, 252));
+    box-shadow: 2px 2px 10px 1px rgb(83, 83, 255);
+    border-radius: 10px;
+    color: rgb(2, 2, 122);
+    padding: 5px;
+    & > div, .icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .cityName {
+        grid-area: title;
+        font-weight: bold;
+        font-size: 20px;
+    }
+    
+    
+    .icon {
+        grid-area: icon;
+        img {
+            width: 80px;
+            height: 80px;
+            margin: -10px 0 -20px 0;
+        }
+    }
+    
+    .pressure {
+        grid-area: press;
+    }
+    
+    
+    .temperature {
+        grid-area: temp;
+        font-size: 25px;
+        font-weight: bold;
+    }
+    
+    .humidity {
+        grid-area: humid;
+    }
+}
+

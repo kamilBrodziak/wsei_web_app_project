@@ -3,7 +3,9 @@ export enum TagName {
     BUTTON = 'button',
     INPUT = 'input',
     UL = 'ul',
-    LI = 'li'
+    LI = 'li',
+    SPAN = 'span',
+    IMG = 'img',
 }
 
 export enum EventType {
@@ -46,6 +48,11 @@ class ElementBuilder<T extends Elements> {
 
     innerText(str:string) {
         this.element.innerText = str;
+        return this;
+    }
+
+    innerHtml(str:string) {
+        this.element.innerHTML = str;
         return this;
     }
 

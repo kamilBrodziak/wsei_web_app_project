@@ -55,6 +55,16 @@ module.exports =  merge(common, {
                 removeAttributeQuotes: true,
                 collapseWhitespace: true
             }
+        }),
+        new HtmlWebpackPlugin({
+            template: "./src/lab3/index.html",
+            filename: "lab3/index.html",
+            chunks: ['lab3'],
+            minify: {
+                removeComments: true,
+                removeAttributeQuotes: true,
+                collapseWhitespace: true
+            }
         })
     ],
     module: {
